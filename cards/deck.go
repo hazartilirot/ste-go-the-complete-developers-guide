@@ -40,7 +40,7 @@ func (d deck) toString() string {
 	return strings.Join(d, ",")
 }
 
-func saveToFile(filename string, d deck) {
+func (d deck) saveToFile(filename string) {
 	err := ioutil.WriteFile(filename, []byte(d.toString()), 0744)
 	if err != nil {
 		fmt.Println("Error: ", err)
